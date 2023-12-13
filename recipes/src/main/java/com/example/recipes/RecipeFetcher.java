@@ -1,26 +1,22 @@
 package com.example.recipes;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-
+@Component
 public class RecipeFetcher {
     private String RecipesToGet;
     private String fetchingUrl;
 
-    public RecipeFetcher(String RecipesToGet){
+    public RecipeFetcher(){
         this.RecipesToGet = RecipesToGet;
-        fetchingUrl = getUrl(RecipesToGet);
     }
-
-    private String getUrl(String RecipesParam){
-        String apiUrl = "www.themealdb.com/api/json/v1/1/search.php?s="+RecipesParam;
-        return apiUrl;
-    }
-
-    public String fetchData() {
+    public Recipes fetchData(String RecipesParam) {
         RestTemplate restTemplate = new RestTemplate();
-        String response = restTemplate.getForObject(fetchingUrl, String.class);
+        String apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s="+RecipesParam;
+        Recipes response = restTemplate.getForObject(apiUrl, Recipes.class);
         System.out.println(response);
         return response;
     }
+
 
 }

@@ -2,9 +2,6 @@ package com.example.recipes;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Recipe {
-
-
-
     @JsonProperty("idMeal")
     private String idMeal;
 
@@ -38,9 +35,8 @@ public class Recipe {
     @JsonProperty("strIngredient2")
     private String strIngredient2;
 
-    // Add other ingredients and measurements as needed
     public String getIdMeal() {
         return idMeal;
     }
-    // Add getters and setters
+
 }
