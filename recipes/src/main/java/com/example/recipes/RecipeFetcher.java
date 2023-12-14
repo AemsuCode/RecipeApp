@@ -10,7 +10,7 @@ public class RecipeFetcher {
     public RecipeFetcher(){
         this.RecipesToGet = RecipesToGet;
     }
-    public Recipes fetchData(String RecipesParam) {
+    public Recipes fetchSpecificFood(String RecipesParam) {
         RestTemplate restTemplate = new RestTemplate();
         String apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s="+RecipesParam;
         Recipes response = restTemplate.getForObject(apiUrl, Recipes.class);

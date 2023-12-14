@@ -7,4 +7,7 @@ import java.util.List;
 public class Recipes {
     @JsonProperty("meals")
     private List<Recipe> recipesList;
+    public List<Recipe> getRecipesList() {
+        return recipesList;
+    }
 }
